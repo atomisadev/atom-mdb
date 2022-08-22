@@ -44,24 +44,7 @@ import {
 } from "@chakra-ui/icons";
 import React, { FormEvent, ReactNode, useRef, useState } from "react";
 import { useRouter } from "next/router";
-
-interface IUser {
-  displayName: string;
-  email: string;
-  phoneNumber: string;
-  photoURL: string;
-  providerId: string;
-  uuid: string;
-}
-
-const defaultObject = {
-  displayName: "",
-  email: "",
-  phoneNumber: "",
-  photoURL: "",
-  providerId: "",
-  uuid: "",
-};
+import { IUser } from "../../../types/IUser";
 
 export default function Navbar({ user }: { user: IUser }) {
   const { toggleColorMode, colorMode } = useColorMode();
@@ -87,14 +70,17 @@ export default function Navbar({ user }: { user: IUser }) {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
+  const [url, setUrl] = useState("");
 
   const nameError = name.length < 2;
   const descriptionError = description.length < 20;
   const categoryError = category.length < 5;
+  const urlError = url.length < 5;
 
   const handleNameChange = (e: any) => setName(e.target.value);
   const handleDescriptionChange = (e: any) => setDescription(e.target.value);
   const handleCategoryChange = (e: any) => setCategory(e.target.value);
+  const handleUrlChange = (e: any) => setUrl(e.target.value);
 
   const handleAddSubmit = (e: React.FormEvent) => {
     if (nameError || descriptionError || categoryError) {
@@ -317,12 +303,6 @@ export default function Navbar({ user }: { user: IUser }) {
         </Box>
       </Box>
       <Divider />
-
-      <Box px={4} py={8} mx={"100"}>
-        <Heading color={useColorModeValue("gray.600", "gray.200")}>
-          Welcome, {user?.displayName}!
-        </Heading>
-      </Box>
     </Box>
   );
 }
