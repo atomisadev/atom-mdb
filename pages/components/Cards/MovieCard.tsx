@@ -55,15 +55,15 @@ export default function ProductAddToCart({ data }: { data: DataType }) {
         position="relative"
       >
         <Image
-          src={data.imageURL}
-          alt={`Picture of ${data.name}`}
+          src={data?.imageURL}
+          alt={`Picture of ${data?.name}`}
           roundedTop="lg"
         />
 
         <Box p="6">
           <Box display="flex" alignItems="baseline">
             <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="red">
-              {data.category}
+              {data?.category}
             </Badge>
           </Box>
           <Flex mt={1} justifyContent="space-between" alignContent="center">
@@ -73,12 +73,12 @@ export default function ProductAddToCart({ data }: { data: DataType }) {
               as="h4"
               lineHeight="tight"
             >
-              {data.name}
+              {data?.name}
             </Box>
           </Flex>
 
           <Flex justifyContent="space-between" alignContent="center">
-            <Rating rating={data.rating} numReviews={data.numReviews} />
+            <Rating rating={data?.rating} numReviews={data?.numReviews} />
           </Flex>
         </Box>
       </Box>
