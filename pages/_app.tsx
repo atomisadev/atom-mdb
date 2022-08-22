@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import { ChakraProvider, ChakraProviderProps } from "@chakra-ui/react";
-import { Navbar } from "./components/Header/Nav";
+import Navbar from "./components/Header/Nav";
 import theme from "./theme";
 import { AppProps } from "next/app";
 

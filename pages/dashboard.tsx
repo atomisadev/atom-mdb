@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState, ReactNode } from "react";
 
 // Components
-import { Navbar } from "./components/Header/Nav";
+import Navbar from "./components/Header/Nav";
 
 interface IUser {
   displayName: string;

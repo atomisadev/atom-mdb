@@ -63,7 +63,7 @@ const defaultObject = {
   uuid: "",
 };
 
-export function Navbar({ user }: { user: IUser }) {
+export default function Navbar({ user }: { user: IUser }) {
   const { toggleColorMode, colorMode } = useColorMode();
   const router = useRouter();
   const signOut = () => {

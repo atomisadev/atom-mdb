@@ -1,4 +1,4 @@
-import { Navbar } from "./components/Header/Nav";
+import Navbar from "./components/Header/Nav";
 import {
   Flex,
   Heading,
