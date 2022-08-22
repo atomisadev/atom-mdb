@@ -106,6 +106,11 @@ export default function Navbar({ user }: { user: IUser }) {
         isClosable: false,
       });
     }
+    console.log({
+      name,
+      description,
+      category,
+    });
     modalOnClose();
     toast({
       title: "Movie added",

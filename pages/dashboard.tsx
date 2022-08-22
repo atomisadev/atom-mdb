@@ -1,6 +1,7 @@
 import { userAccessToken, fetchUser } from "../utils/fetchUserDetails";
 import { useRouter } from "next/router";
 import { useEffect, useState, ReactNode } from "react";
+import Head from "next/head";
 
 // Components
 import Navbar from "./components/Header/Nav";
@@ -39,6 +40,9 @@ export default function Dashboard() {
 
   return (
     <>
+      <Head>
+        <title>Dashboard • AMBD</title>
+      </Head>
       <Navbar user={user} />
     </>
   );
