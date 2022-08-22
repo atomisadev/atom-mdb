@@ -75,7 +75,7 @@ export default function Navbar({ user }: { user: IUser }) {
   const nameError = name.length < 2;
   const descriptionError = description.length < 20;
   const categoryError = category.length < 5;
-  const urlError = url.length < 5;
+  const urlError = url.includes("");
 
   const handleNameChange = (e: any) => setName(e.target.value);
   const handleDescriptionChange = (e: any) => setDescription(e.target.value);
@@ -170,8 +170,19 @@ export default function Navbar({ user }: { user: IUser }) {
               icon={colorMode === "dark" ? <SunIcon /> : <MoonIcon />}
               onClick={toggleColorMode}
               aria-label={"Toggle Color Mode"}
+              background={"transparent"}
               mr={4}
             />
+            <Button
+              variant={"ghost"}
+              colorScheme={"teal"}
+              size={"sm"}
+              mr={2}
+              leftIcon={<AddIcon />}
+              onClick={modalOnOpen}
+            >
+              Add Rating
+            </Button>
             <Button
               variant={"solid"}
               colorScheme={"teal"}

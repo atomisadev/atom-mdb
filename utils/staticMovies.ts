@@ -2,15 +2,15 @@ export const staticMovies = [
   {
     category: "Science Fiction",
     imageURL:
-      "https://i.kym-cdn.com/entries/icons/original/000/027/539/3515432-endgamedek.jpg",
+      "https://www.themoviedb.org/t/p/original/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg",
     name: "Avengers: Endgame",
     rating: 4.2,
     numReviews: 153,
   },
   {
-    category: "Romance/Drama",
+    category: "Romance",
     imageURL:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8qBao9EEFkOkEiIZcEB4j8-Jd4zluTxpcUQ&usqp=CAU",
+      "https://www.themoviedb.org/t/p/original/wVzvmLSSI2NPD1Ya9ePAStLqBFB.jpg",
     name: "All The Bright Places",
     rating: 3.25,
     numReviews: 89,
@@ -46,5 +46,21 @@ export const staticMovies = [
     name: "The Man from Toronto",
     rating: 3.25,
     numReviews: 324,
+  },
+  {
+    category: "Science Fiction",
+    imageURL:
+      "https://www.themoviedb.org/t/p/original/kpXaGVVo9Z2Cs3RcNKTuGM7I06E.jpg",
+    name: "The Tomorrow War",
+    rating: 4,
+    numReviews: 678,
+  },
+  {
+    category: "Action",
+    imageURL:
+      "https://www.themoviedb.org/t/p/original/AaV1YIdWKnjAIAOe8UUKBFm327v.jpg",
+    name: "Top Gun: Maverick",
+    rating: 4.15,
+    numReviews: 1657,
   },
 ];
