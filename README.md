@@ -1,34 +1,135 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+   <h1>AtomMDB</h1>
+   <p>😎 Movie ratings for the cool kids</p>
+  
+   <img src="https://img.shields.io/github/license/atomdevelops/atom-mdb" alt="MIT License" />
+   <img src="https://img.shields.io/github/directory-file-count/atomdevelops/atom-mdb" alt="# of Directories & Files" />
+   <img src="https://img.shields.io/github/repo-size/atomdevelops/atom-mdb" alt="Repo size" />
+</div>
 
-## Getting Started
+## Technologies
+The technologies used in this project include the following:
+- [ChakraUI](//chakra-ui.com)
 
-First, run the development server:
+- [TypeScript](//typescriptlang.org)
 
+- [React.js](//reactjs.org)
+
+- [Next.js](//nextjs.org)
+
+- [Firebase](//firebase.google.com)
+
+  - Google Provider
+
+Please note that this project is **nowhere close to being finished**. There are many things yet to do. It is still under its alpha phase.
+
+## Self-Hosting
+This project is available to be self-hosted. It's quite simple, just like setting up any other Next.js app. 
+
+A very important thing to remember is that **this self-hosting "guide" is not final yet, and is subject to change**.
+
+> **Note**: To view the steps, just click on the titles to trigger the dropdown.
+
+<details><summary>Clone the repository</summary>
+<br />
+You can clone the repository using either HTTPS or SSH.
+
+With HTTPS:
 ```bash
-npm run dev
-# or
+git clone https://atomdevelops/atom-mdb.git
+```
+
+With SSH:
+```bash
+git clone git@github.com:atomdevelops/atom-mdb.git
+```
+
+Once you have cloned the repository, `cd` into the directory of the cloned repository. This directory is most likely named `atom-mdb--main`.
+
+</details>
+
+<details><summary>Install dependencies</summary>
+<br />
+To start the project, you need to install the necessary modules for it to work as expected. This can simply be done with the `yarn` command:
+```bash
+yarn
+```
+
+After running this command, you're ready to move on to the next step.
+
+</details>
+
+<details><summary>Run the project in development mode</summary>
+<br />
+
+After installing dependencies, you can start the project by running:
+```bash
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This will open a development environment with the project and will allow you to open the website on http://localhost:3000.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+#### How to open on different port?
+To open the development server on a different port (other than port 3000), go inside the `./package.json` file located in the root directory of the project.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Once you are inside `package.json`, look at the JSON attribute labeled `scripts`:
+```json
+"scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start",
+  "lint": "next lint"
+},
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Then, change the `dev` script to:
+```json
+"dev": "next dev -p 3002"
+```
+> **Note**: Replace the port `3002` with your desired port.
 
-## Learn More
+</details>
 
-To learn more about Next.js, take a look at the following resources:
+<details><summary>Enter the environment variables</summary>
+<br />
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Great! You're almost there! The project will run, but you won't be able to sign in and view the dashboard.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+To do this, all you have to do is go to the [Firebase console](//console.firebase.google.com). From here, you need to create a new project and enter its information inside your `.env.local` file. Let's see how to do this:
+1. Log in to the [Firebase console](//console.firebase.google.com)
+2. Click on "Create a new project"
+3. Name your project then click "Next"
+4. Follow the steps accordingly until you have successfully created your project
+5. At the top, create a new "Web app"
+6. Title the app and then click "Next"
+7. From here, you should see JavaScript code showing you how to initialize a Firebase app
+8. Inside your project, rename the `.env.local.example` file to `.env.local`
+9. Remove the placeholder values from the environment variables and enter the values presented to you when creating the new Web App on Firebase
+10. Don't be shy to put your private keys inside the environment variables files as Next.js automatically ignores it when you are pushing it to any platform like GitHub.
+11. Once all of the keys are entered, you you may save the file and restart your development server. As you can see, when you click "Login with Google," it opens a new popup window saying it will redirect you to `<your project>.firebaseapp.com`. It worked!
+12. Sign in with your Google account and access the dashboard!
 
-## Deploy on Vercel
+</details>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+# Deploying
+
+To deploy a self-hosted version of your project is quite simple. For this, I will show you how to use Vercel. Although, Netlify practically works the same way.
+1. Push the cloned directory to your own GitHub repository
+2. Go to the [Vercel dashboard](//vercel.com) and sign in with GitHub
+3. Then [create a new project](//vercel.com/new)
+4. Select the repository you just created
+6. Scroll down until you see the section titled "Environment Variables" and open it
+7. One by one, copy and paste the names of each environment variable from your `.env.local` file along with its value on the name and value field
+8. Make sure to click "Add" for every new environment variable you insert
+9. Finally, **click deploy**
+10. Watch the deployment logs as the project is deployed
+
+I won't be including a Netlify version for the deployment process, but it's quite similar.
+  
+## Previews
+> **Note**: The screenshots are of the current version of AtomMDB alpha 0.1.0. This means that these screenshots are subject to change very soon. **The user dashboard is not even close to its finished state.**
+
+<img src="https://user-images.githubusercontent.com/99760654/185967849-2d4d6dd7-57b3-42d3-9bf6-88df82aa3eef.png" width="700" />
+<img src="https://user-images.githubusercontent.com/99760654/185968061-e18ccb5f-545f-4b76-803e-23e7f2a6be97.png" width"700" />
