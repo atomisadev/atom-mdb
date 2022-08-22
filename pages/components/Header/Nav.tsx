@@ -262,7 +262,7 @@ export default function Navbar({ user }: { user: IUser }) {
               </ModalContent>
             </Modal>
             <Menu>
-              <Tooltip label={user.displayName}>
+              <Tooltip label={user?.displayName}>
                 <MenuButton
                   as={Button}
                   rounded={"full"}
@@ -270,7 +270,7 @@ export default function Navbar({ user }: { user: IUser }) {
                   cursor={"pointer"}
                   minW={0}
                 >
-                  <Avatar size={"sm"} src={`${user.photoURL}`} />
+                  <Avatar size={"sm"} src={`${user?.photoURL}`} />
                 </MenuButton>
               </Tooltip>
               <MenuList>
@@ -315,7 +315,7 @@ export default function Navbar({ user }: { user: IUser }) {
 
       <Box px={4} py={8} mx={"100"}>
         <Heading color={useColorModeValue("gray.600", "gray.200")}>
-          Welcome, {user.displayName}!
+          Welcome, {user?.displayName}!
         </Heading>
       </Box>
     </Box>
