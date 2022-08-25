@@ -21,6 +21,8 @@ The technologies used in this project include the following:
 
   - Google Provider
 
+- [MongoDB](//mongodb.com)
+
 Please note that this project is **nowhere close to being finished**. There are many things yet to do. It is still under its alpha phase.
 
 ## Self-Hosting
