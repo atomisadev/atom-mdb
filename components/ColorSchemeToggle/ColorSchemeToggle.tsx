@@ -1,35 +1,43 @@
-import { useMantineColorScheme, SegmentedControl, Group, Center, Box } from '@mantine/core';
-import { IconSun, IconMoon } from '@tabler/icons';
+import { createStyles, Switch, Group, useMantineColorScheme } from '@mantine/core';
+import { IconSun, IconMoonStars } from '@tabler/icons';
+
+const useStyles = createStyles((theme) => ({
+  root: {
+    position: 'relative',
+    '& *': {
+      cursor: 'pointer',
+    },
+  },
+
+  icon: {
+    pointerEvents: 'none',
+    position: 'absolute',
+    zIndex: 1,
+    top: 3,
+  },
+
+  iconLight: {
+    left: 4,
+    color: theme.white,
+  },
+
+  iconDark: {
+    right: 4,
+    color: theme.colors.gray[6],
+  },
+}));
 
 export default function ColorSchemeToggle() {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+  const { classes, cx } = useStyles();
 
   return (
     <Group position="center">
-      <SegmentedControl
-        value={colorScheme}
-        onChange={(value: 'light' | 'dark') => toggleColorScheme(value)}
-        data={[
-          {
-            value: 'light',
-            label: (
-              <Center>
-                <IconSun size={16} stroke={1.5} />
-                <Box ml={10}>Light</Box>
-              </Center>
-            ),
-          },
-          {
-            value: 'dark',
-            label: (
-              <Center>
-                <IconMoon size={16} stroke={1.5} />
-                <Box ml={10}>Dark</Box>
-              </Center>
-            ),
-          },
-        ]}
-      />
+      <div className={classes.root}>
+        <IconSun className={cx(classes.icon, classes.iconLight)} size={18} stroke={1.5} />
+        <IconMoonStars className={cx(classes.icon, classes.iconDark)} size={18} stroke={1.5} />
+        <Switch checked={colorScheme === 'dark'} onChange={() => toggleColorScheme()} size="md" />
+      </div>
     </Group>
   );
 }
