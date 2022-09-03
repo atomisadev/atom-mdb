@@ -1,5 +1,6 @@
 import { Center, Title, Stack, Button, Text } from '@mantine/core';
 import { IconBrandGoogle } from '@tabler/icons';
+import ColorSchemeToggle from '../components/ColorSchemeToggle/ColorSchemeToggle';
 
 export default function HomePage() {
   return (
@@ -16,9 +17,11 @@ export default function HomePage() {
             color="indigo"
             radius="lg"
             mt={10}
+            mb={10}
           >
             Sign in with Google
           </Button>
+          <ColorSchemeToggle />
         </Stack>
       </Center>
     </>
