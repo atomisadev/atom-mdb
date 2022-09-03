@@ -5,7 +5,7 @@
 
 # Preview
 
-To see the preview website, you can click the link below.
+To see the preview website, you can click the link.
 https://atom-mdb-git-dev-atomdevelops.vercel.app/
 
 # TODO
