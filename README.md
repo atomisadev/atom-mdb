@@ -8,6 +8,8 @@
 - [x] Mantine UI library instead of Chakra
 - [x] Login page (similar to v1)
 - [ ] User Dashboard
+- [ ] Public API
+  - Still working on making the API public. This will work by distributing API keys.
 - [ ] Movie fetching
 
 # New Features
