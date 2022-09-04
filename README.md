@@ -1,11 +1,12 @@
-<div align="center">
-   <h1>AtomMDB</h1>
-   <p>😎 Movie ratings for the cool kids</p>
-  
-   <img src="https://img.shields.io/github/license/atomdevelops/atom-mdb" alt="MIT License" />
+# AtomMDB
+Reinventing (totally) how you write movie reviews. This project is mainly just a learning experience for me.
+<div>
+<img src="https://img.shields.io/github/license/atomdevelops/atom-mdb" alt="MIT License" />
    <img src="https://img.shields.io/github/directory-file-count/atomdevelops/atom-mdb" alt="# of Directories & Files" />
    <img src="https://img.shields.io/github/repo-size/atomdevelops/atom-mdb" alt="Repo size" />
 </div>
+
+-----------
 
 ## Technologies
 The technologies used in this project include the following:
@@ -131,7 +132,4 @@ To deploy a self-hosted version of your project is quite simple. For this, I wil
 I won't be including a Netlify version for the deployment process, but it's quite similar.
   
 ## Previews
-> **Note**: The screenshots are of the current version of AtomMDB alpha 0.1.0. This means that these screenshots are subject to change very soon. **The user dashboard is not even close to its finished state.**
-
-<img src="https://user-images.githubusercontent.com/99760654/185967849-2d4d6dd7-57b3-42d3-9bf6-88df82aa3eef.png" width="700" />
-<img src="https://user-images.githubusercontent.com/99760654/185968061-e18ccb5f-545f-4b76-803e-23e7f2a6be97.png" width"700" />
+Previews have been removed due to the constant updates with the project. Currently, there is a version 2 being worked on. You can check it out on the [dev branch](//github.com/atomdevelops/atom-mdb/tree/dev).
