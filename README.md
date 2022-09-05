@@ -1,14 +1,18 @@
-# AtomMDB
-Reinventing (totally) how you write movie reviews. This project is mainly just a learning experience for me.
-<div>
-<img src="https://img.shields.io/github/license/atomdevelops/atom-mdb" alt="MIT License" />
+<div align="center">
+   <img src="https://user-images.githubusercontent.com/99760654/188520502-ddc2aef6-c7e7-4d1b-9277-102bf044df03.png" width="250" />
+   <br />
+   <h1>AtomMDB</h1>
+   <p>Movie reviews for the cool kids :)</p>
+   <img src="https://img.shields.io/github/license/atomdevelops/atom-mdb" alt="MIT License" />
    <img src="https://img.shields.io/github/directory-file-count/atomdevelops/atom-mdb" alt="# of Directories & Files" />
    <img src="https://img.shields.io/github/repo-size/atomdevelops/atom-mdb" alt="Repo size" />
 </div>
+</div>
+
 
 -----------
 
-## Technologies
+# Technologies
 The technologies used in this project include the following:
 - [ChakraUI](//chakra-ui.com)
 
@@ -26,7 +30,7 @@ The technologies used in this project include the following:
 
 Please note that this project is **nowhere close to being finished**. There are many things yet to do. It is still under its alpha phase.
 
-## Self-Hosting
+# Self-Hosting
 This project is available to be self-hosted. It's quite simple, just like setting up any other Next.js app. 
 
 A very important thing to remember is that **this self-hosting "guide" is not final yet, and is subject to change**.
