@@ -1,29 +1,21 @@
-import { Center, Title, Stack, Button, Text } from '@mantine/core';
-import { IconBrandGoogle } from '@tabler/icons';
-import ColorSchemeToggle from '../components/ColorSchemeToggle/ColorSchemeToggle';
+import { Heading, Button, Flex, Box, VStack, Text } from "@chakra-ui/react";
+import { ArrowForwardIcon } from "@chakra-ui/icons";
+import type { NextPage } from "next";
 
-export default function HomePage() {
+const Home: NextPage = () => {
   return (
     <>
-      <Center style={{ height: '100vh' }}>
-        <Stack align="center" spacing={10}>
-          <Title order={1} size={50} variant="gradient">
-            AtomMDB
-          </Title>
+      <Flex justifyContent="center" alignItems="center" height="100vh">
+        <VStack spacing={5}>
+          <Heading>AtomMDB</Heading>
           <Text>Movie reviews for the cool kids</Text>
-          <Button
-            leftIcon={<IconBrandGoogle size="18" />}
-            variant="light"
-            color="indigo"
-            radius="lg"
-            mt={10}
-            mb={10}
-          >
+          <Button colorScheme="green" rightIcon={<ArrowForwardIcon />}>
             Sign in with Google
           </Button>
-          <ColorSchemeToggle />
-        </Stack>
-      </Center>
+        </VStack>
+      </Flex>
     </>
   );
-}
+};
+
+export default Home;

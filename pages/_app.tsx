@@ -1,39 +1,29 @@
-import { GetServerSidePropsContext } from 'next';
-import { useState } from 'react';
-import { AppProps } from 'next/app';
-import { getCookie, setCookie } from 'cookies-next';
-import Head from 'next/head';
-import { MantineProvider, ColorScheme, ColorSchemeProvider } from '@mantine/core';
-import { NotificationsProvider } from '@mantine/notifications';
+import "../styles/globals.css";
+import type { AppProps } from "next/app";
+import { ChakraProps, ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { mode } from "@chakra-ui/theme-tools";
 
-export default function App(props: AppProps & { colorScheme: ColorScheme }) {
-  const { Component, pageProps } = props;
-  const [colorScheme, setColorScheme] = useState<ColorScheme>(props.colorScheme);
+const config = {
+  initialColorMode: "dark",
+  useSystemColorMode: false,
+};
 
-  const toggleColorScheme = (value?: ColorScheme) => {
-    const nextColorScheme = value || (colorScheme === 'dark' ? 'light' : 'dark');
-    setColorScheme(nextColorScheme);
-    setCookie('mantine-color-scheme', nextColorScheme, { maxAge: 60 * 60 * 24 * 30 });
-  };
+const styles = {
+  global: (props: ChakraProps) => ({
+    body: {
+      bg: mode("gray.50", "#151a23")(props),
+    },
+  }),
+};
 
+const theme = extendTheme({ ...config, styles });
+
+function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <Head>
-        <title>Welcome • AtomMDB</title>
-        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
-      </Head>
-
-      <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
-        <MantineProvider theme={{ colorScheme }} withGlobalStyles withNormalizeCSS>
-          <NotificationsProvider>
-            <Component {...pageProps} />
-          </NotificationsProvider>
-        </MantineProvider>
-      </ColorSchemeProvider>
-    </>
+    <ChakraProvider theme={theme}>
+      <Component {...pageProps} />
+    </ChakraProvider>
   );
 }
 
-App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => ({
-  colorScheme: getCookie('mantine-color-scheme', ctx) || 'light',
-});
+export default MyApp;
